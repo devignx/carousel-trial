@@ -1,186 +1,47 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800;900&display=swap');
-
-*{ 
-  scroll-behavior: smooth;
+.carousel {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
 }
 
-body{ 
-  font-family: Manrope;
-  overflow-x: hidden;
-}
-/* Default theme */
-.bg-primary {
-  background-color: #2196f3;
-  color: rgb(33, 39, 62);
+.carousel-image {
+  opacity: 0;
 }
 
-/* Secondary theme */
-.bg-secondary {
-  background-color: #607d8b;
-  color: rgb(62, 62, 62);
+.carousel-image.active {
+  opacity: 1;
 }
 
-/* Success theme */
-.bg-success {
-  background-color: #4caf50;
-  color: rgb(33, 62, 48);
-}
-
-/* Info theme */
-.bg-info {
-  background-color: #00bcd4;
-  color: rgb(33, 50, 62);
-}
-
-/* Warning theme */
-.bg-warning {
-  background-color: #ffc107;
-  color: rgb(62, 56, 33);
-}
-
-/* Danger theme */
-.bg-danger {
-  background-color: #f44336;
-  color: rgb(62, 39, 33);
-}
-
-
-
-/* 
-img{
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-
-} */
-
-
-/*---------------HP Classics---------------*/
-
-
-/*centering absolute stuff*/
-
-.centerh{      
-  left: 50%;                        
-  transform: translate(-50%, 0)
-}
-
-.centerv{      
-  top: 50%;                        
-  transform: translate(0, -50%)
-  
-}
-
-
-/*Selection controls*/
-
-::-moz-selection {
-  color: rgb(0, 0, 0); 
-  background: #74aeff;
-}
-
-::selection {
-  color: rgb(0, 0, 0); 
-  background: #74aeff;
-}
-
-.noselect {
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  pointer-events: none;
-}
-
-
-/*media hacks*/
-
-.pc{
-  visibility: visible;
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
+  justify-content: center;
+  z-index: 1;
 }
 
-.mob{
-  visibility: hidden;
-  display: none;
+.indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #888;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.hide{
-  display: none;
-  visibility: hidden;
+.indicator.active {
+  background-color: #3e72ec;
 }
 
-
-/*Scrollbar customized*/
-
-::-webkit-scrollbar-track {
-background-color: transparent;
-overflow: overlay;
-width: 5px;
-z-index: 100;
+.no-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 18px;
+  color: #888;
 }
-
-::-webkit-scrollbar {
-width: 5px;
-overflow: overlay;
-z-index: 100;
-height: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-visibility: visible;
-border-radius: 100px;
-
-background-color: #d8d8d8;
-z-index: 150;
-}
-
-
-/*z-index hacks*/
-
-.toppp{
-  z-index: 9999;
-}
-
-.topppp{
-  z-index: 99999;
-}
-
-.bottt{
-  z-index: -9999; 
-}
-
-.botttt{
-  z-index: -99999; 
-}
-
-
-/*others*/
-
-abbr[title] {
-border-bottom: none !important;
-cursor: inherit !important;
-text-decoration: none !important;
-}
-
-@media screen and (max-width: 1024px) {
-
-.mob{
-visibility: visible;
-display:flex;
-}
-.pc{
-visibility: hidden;
-display: none;
-}
-
-}
-
-
-/*---------------HP Classics---------------*/

@@ -29,20 +29,20 @@ const Home = ({ images = Array.from({ length: 6 }, (_, index) => `https://picsum
   };
 
   return (
-    <div className="relative pb-16 bg-black p-6">
-      <div className="image-container p-2 bg-red-500 overflow-x-scroll">
+    <div className="relative pb-16 p-6">
+      <div className="relative p-2 h-[40vh] max-h-[50vh] overflow-scroll">
         {
           images.map((image, index) => (
             <img
               key={index}
               src={image}
               alt={`${index}`}
-              className={`carousel-image ${index === currentImageIndex ? 'active' : ''}`}
+              className={`carousel-image w-[25rem] absolute object-contain anim centerh ${index === currentImageIndex ? 'active' : ''}`}
             />
           ))
         }
       </div>
-      <div onClick={()=>{setSlide(false)}} className="indicators ">{renderIndicators()}</div>
+      <div onClick={()=>{setSlide(false)}} className="indicators">{renderIndicators()}</div>
     </div>
   );
 };
